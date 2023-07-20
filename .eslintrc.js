@@ -1,16 +1,25 @@
 // eslint-disable-next-line no-undef
 module.exports = {
   root: true,
+  env: {
+    browser: true,
+  },
   extends: [
     'plugin:react/recommended',
     'airbnb-base',
   ],
+  parser: '@typescript-eslint/parser',
   settings: {
+    react: {
+      version: 'detect',
+    },
     'import/resolver': {
       node: {
         extensions: [
           '.js',
           '.jsx',
+          '.ts',
+          '.tsx',
         ],
       },
     },
@@ -26,6 +35,7 @@ module.exports = {
     'no-console': 'off',
     'no-param-reassign': 'off',
     'object-curly-newline': 'off',
+    'object-curly-spacing': [1, 'never'],
     'default-param-last': 'off',
     indent: 'off',
     'no-unused-vars': 'off',
@@ -56,7 +66,7 @@ module.exports = {
           },
         ],
         pathGroupsExcludedImportTypes: ['react'],
-        alphabetize: { order: 'asc' },
+        alphabetize: {order: 'asc'},
       },
     ],
   },
