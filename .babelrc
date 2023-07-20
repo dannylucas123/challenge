@@ -1,0 +1,11 @@
+{
+  "plugins": ["@babel/syntax-dynamic-import", "react-refresh/babel"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ]
+  ]
+}
