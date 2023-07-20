@@ -2,8 +2,10 @@
 
 const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -69,10 +71,23 @@ const config = {
 };
 
 module.exports = () => {
+  const env = dotenv.config().parsed;
+
+  // Note that in this example there will only be one environment variable.
+  // If there are more, you don't want to hardcode it, but loop over the env object and map the keys to 'process.env.{key}'
+  // and add that to as a plugin
+  config.plugins = [
+    ...config.plugins,
+    new webpack.DefinePlugin({
+      'process.env.API_KEY': JSON.stringify(env.API_KEY),
+    }),
+  ];
+
   if (isProduction) {
     config.mode = 'production';
   } else {
     config.mode = 'development';
   }
+
   return config;
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 const App = () => (
   <main>
-    Hoi
+    {process.env.API_KEY}
   </main>
 );
 
