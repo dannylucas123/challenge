@@ -1,0 +1,10 @@
+.show-tile {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(75%);
+  }
+}

@@ -1,0 +1,20 @@
+
+button[type=button] {
+  &.btn.btn-primary,
+  &.btn.btn-secondary {
+    color: var(--color-button-text);
+    border: 0px;
+
+    &:hover {
+      filter: brightness(75%);
+    }
+  }
+
+  &.btn.btn-primary {
+    background-color: var(--color-primary);
+  }
+
+  &.btn.btn-secondary {
+    background-color: var(--color-secondary);
+  }
+}
