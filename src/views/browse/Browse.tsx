@@ -28,8 +28,9 @@ const Browse = ({onNavigate, onSelected}: BrowseProps) => {
 
   // Debounce so we don't want to spam the API whenever we type in a letter.
   const quickSearch = useCallback(debounce((s: string) => fetchShows(s).then((result) => setQuickShows(result.Search)), 350, {trailing: true}), []);
-  const allSearch = useCallback(debounce((s: string) => fetchShows(s).then((result) => setAllShows(result.Search)), 350, {trailing: true}), []);
 
+  // If the API had supported returning partial results (like top 4) this approach would have made more sense.
+  // I want to mimic the behaviour that you see some results when typing and when you press Search you fetch all results.
   useEffect(() => {
     quickSearch(search);
   }, [search, quickSearch]);
@@ -39,11 +40,8 @@ const Browse = ({onNavigate, onSelected}: BrowseProps) => {
     onNavigate(DETAIL);
   };
 
-  // If the API had supported returning partial results (like top 4) this approach would have made more sense.
-  // I want to mimic the behaviour that you see some results when typing and when you press Search you fetch all results.
-  // Of course this API does not support this behaviour, so you always get back all the results.
   const handleSearch = (): void => {
-    allSearch(search);
+    fetchShows(search).then((result) => setAllShows(result.Search));
   };
 
   return (

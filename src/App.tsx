@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import './App.scss';
 import {DETAIL, HOME} from './constants';
 import Browse from './views/browse/Browse';
 import Details from './views/details/Details';
+import './App.scss';
 
 const App = () => {
   const [navigation, setNavigation] = useState<string>(HOME);
