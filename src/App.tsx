@@ -5,6 +5,7 @@ import Details from './views/details/Details';
 import './App.scss';
 
 const App = () => {
+  // In a bigger app React-Router would be a better solution.
   const [navigation, setNavigation] = useState<string>(HOME);
   const [selected, setSelected] = useState<string>(null);
 
