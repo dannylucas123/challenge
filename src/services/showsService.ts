@@ -1,36 +1,12 @@
 import {AxiosResponse} from 'axios';
 import api from '../api/axios';
 import {Show} from '../models/show';
+import {ShowDetails} from '../models/show-details';
 
 interface ShowResponse {
   Search: Show[];
   totalResults: string;
   Response?: string;
-}
-
-interface SingleShow {
-  title: string;
-  year: string;
-  rated: string;
-  released: string;
-  runtime: string;
-  genre: string;
-  director: string;
-  writer: string;
-  actors: string;
-  plot: string;
-  language: string;
-  country: string;
-  awards: string;
-  poster: string;
-  ratings: { [key: string]: string }[];
-  metascore: string;
-  imdbRating: string;
-  imdbVotes: string;
-  imdbID: string;
-  type: string;
-  totalSeasons: string;
-  response: string;
 }
 
 // This could also be done in an interceptor, but the API seems to return different formats depending on the parameters and since there is a
@@ -49,6 +25,6 @@ export const fetchShows = (s: string): Promise<ShowResponse> => api.get('', {par
   .then(handleResponse)
   .catch(() => ({Search: [], totalResults: '0'} as ShowResponse));
 
-export const getShow = (i: string): Promise<SingleShow> => api.get('', {params: {i}})
+export const getShow = (i: string): Promise<ShowDetails> => api.get('', {params: {i}})
   .then(handleResponse)
-  .catch(() => ({} as SingleShow));
+  .catch(() => ({} as ShowDetails));
