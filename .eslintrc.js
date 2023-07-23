@@ -28,7 +28,7 @@ module.exports = {
     'linebreak-style': 'off',
     'max-len': [
       'warn',
-      150,
+      151,
     ],
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',

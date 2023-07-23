@@ -1,5 +1,10 @@
 
 button[type=button] {
+  padding: 10px;
+  border-radius: 4px;
+  &:hover {
+    cursor: pointer;
+  }
   &.btn.btn-primary,
   &.btn.btn-secondary {
     color: var(--color-button-text);

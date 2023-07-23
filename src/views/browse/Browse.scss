@@ -4,3 +4,11 @@
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
+
+.browse-bar {
+  display: flex;
+  div {
+    flex-grow: 1;
+    position: relative;
+  }
+}

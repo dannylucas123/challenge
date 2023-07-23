@@ -17,6 +17,11 @@ to bundle your application
 # Environment variables
 Before running the project be sure to copy the .env.dev file (or rename it). Remove the .dev so that it becomes just ".env". Add your apikey to the file.
 
+# Run project
+- Read previous line
+- npm install
+- npm run serve
+
 # Webpack loaders
 - html-webpack-plugin to inject our Javascript bundle into our index.html automatically.
 - MiniCssExtractPlugin to create one fancy css from all our css files.

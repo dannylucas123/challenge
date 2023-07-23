@@ -21,3 +21,48 @@ input {
   margin: 0;
   font-family: inherit;
 }
+
+.quick-search {
+  height: fit-content;
+  width: 100%;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 10;
+  display: none;
+  list-style: none;
+  grid-auto-rows: 1fr;
+  padding-left: 0px;
+
+  &.show {
+    display: grid;
+  }
+
+  li {
+    height: 100%;
+    background-color: #1f1f1f;
+    padding: 0.25rem 0 0.25rem 0;
+    font-size: clamp(14px, 1.5vw, 2rem);
+    display: flex;
+    border-bottom: 1px solid white;
+
+    img {
+      height: 100px;
+    }
+    &:hover {
+      filter: brightness(85%);
+      cursor: pointer;
+    }
+    &:last-of-type {
+      hr {
+        display: none;
+      }
+    }
+
+    .wrapper {
+      padding-left: 10px;
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
