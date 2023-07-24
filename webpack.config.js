@@ -58,7 +58,17 @@ const config = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [stylesHandler, 'css-loader', 'sass-loader'],
+        use: [
+          stylesHandler,
+          'css-loader',
+          'resolve-url-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,

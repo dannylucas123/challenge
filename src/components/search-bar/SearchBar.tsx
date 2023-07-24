@@ -32,7 +32,9 @@ const SearchBar = ({value, onChange, placeholder = 'Search by name', shows = [],
       <ul role="listbox" className={`quick-search ${showQuickSearch && isFocused && 'show'}`}>
         {showQuickSearch && shows.map((show) => (
           <li tabIndex={0} key={show.imdbID} role="option" onClick={() => onClick(show.imdbID)}>
-            <img src={show.Poster} alt={`Poster for ${show.Title}`}></img>
+            <div className="poster-holder">
+              <img src={show.Poster} alt={`Poster for ${show.Title}`}></img>
+            </div>
             <div className='wrapper'>
               <b>
                 {show.Title}

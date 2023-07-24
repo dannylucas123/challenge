@@ -1,49 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;600');
 :root {
   --color-text: #000000;
-  --color-background: #eefaff;
+  --color-background: #ffffff;
   --color-button-text: #eefaff;
-  --color-primary: #5a2a16;
-  --color-secondary: #e3f0c2;
-  --color-accent: #e3f0c2;
+  --color-primary: #8fb3ff;
+  --color-secondary: #ebf1ff;
+  --color-accent: #d41d6d;
 
   --font-family-headers: 'Oswald', sans-serif;
-
-  --bs-body-color: #212529;
-  --bs-body-bg: #fff;
-  --bs-border-width: 1px;
-  --bs-border-color: #dee2e6;
-  --bs-border-radius: 0.375rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-text: #fafafa;
-    --color-background: #050505;
-    --color-primary: #5a2a16;
-    --color-secondary: #20290a;
-    --color-accent: #e09f85;
-  }
 }
 
 html {
-  color-scheme: light dark;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Verdana', sans-serif;
   background-color: var(--color-background);
   color: var(--color-text);
 
+  font-size: clamp(12px, 1.5vw, 16px);
   h1, h2, h3 {
     font-family: var(--font-family-headers);
   }
 
   #react-root {
     height: 100lvh;
-    width: min(100% - 2rem, 100ch);
     margin-inline: auto;
   }
 
-  main {
-    padding: 1rem;
+  .content {
+    width: min(100% - 2rem, 100ch);
+    margin: 0 auto;
   }
 }
 

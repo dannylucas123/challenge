@@ -45,12 +45,12 @@ const Browse = ({onNavigate, onSelected}: BrowseProps) => {
   };
 
   return (
-    <section>
-      <div className='browse-bar'>
+    <section className="content">
+      <div className="browse-bar">
         <SearchBar onClick={handleNavigation} onChange={(e) => setSearch(e.target.value)} value={search} shows={getFourShows(quickShows)}/>
-        <Button variant='primary' text='Search' onClick={() => handleSearch()}/>
+        <Button variant="primary" text="Search" onClick={() => handleSearch()}/>
       </div>
-      <div className='browse-section'>
+      <div className="browse-section">
         {allShows.length > 0 && allShows.map((show) => (
           <ShowTile
             key={show.imdbID}
